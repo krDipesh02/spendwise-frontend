@@ -8,6 +8,9 @@ import CategoriesPage from "./pages/CategoriesPage";
 import AutomationPage from "./pages/AutomationPage";
 import ProfilePage from "./pages/ProfilePage";
 import LandingPage from "./pages/LandingPage";
+import TelegramAdminPage from "./pages/TelegramAdminPage";
+import AdminRoute from "./components/AdminRoute";
+import PasswordSetupPage from "./pages/PasswordSetupPage";
 import { SessionProvider } from "./session";
 
 export default function App() {
@@ -15,6 +18,7 @@ export default function App() {
     <SessionProvider>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/setup-password" element={<PasswordSetupPage />} />
         <Route
           path="/app"
           element={
@@ -30,6 +34,7 @@ export default function App() {
           <Route path="categories" element={<CategoriesPage />} />
           <Route path="automation" element={<AutomationPage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="admin/telegram" element={<AdminRoute><TelegramAdminPage /></AdminRoute>} />
         </Route>
       </Routes>
     </SessionProvider>

@@ -43,6 +43,11 @@ export default function Layout() {
               {item.label}
             </NavLink>
           ))}
+          {session.scopes?.includes("telegram:claims:read") ? (
+            <NavLink to="/app/admin/telegram" className={({ isActive }) => `nav__link${isActive ? " nav__link--active" : ""}`}>
+              <span className="nav__icon">\u2691</span>Telegram Admin
+            </NavLink>
+          ) : null}
         </nav>
 
         <div className="session-chip">
